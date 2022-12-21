@@ -4,7 +4,7 @@ import "./App.css";
 import HeaderComponent from "./app/components/Header";
 import InputAdornments from "./app/components/Search";
 import Home from "./app/pages/home";
-import Profile from "./app/pages/profile";
+import ProfileCard from "./app/pages/ProfileCard";
 import Search from "./app/pages/search";
 
 const App: React.FC = () => {
@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <InputAdornments />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/profile/:cardId" element={<Profile />} />
+          <Route path="/profileCard/:cardId" element={<ProfileCard />} />
           <Route path="/search/:filter/:value" element={<Search />} />
         </Routes>
       </BrowserRouter>

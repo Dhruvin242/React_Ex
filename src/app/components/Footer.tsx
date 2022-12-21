@@ -25,15 +25,13 @@ const FooterComponent = () => {
         <Toolbar>
           <Box sx={{ flexGrow: 1 }} />
           <div className="footer-name">
-            {uniqueArray?.map((item: any) => {
-              return (
-                <div id={item}>
-                  <Typography variant="body1" gutterBottom>
-                    {item}
-                  </Typography>
-                </div>
-              );
-            })}
+            {uniqueArray?.map((item: any) => (
+              <div id={item}>
+                <Typography variant="body1" gutterBottom>
+                  {item}
+                </Typography>
+              </div>
+            ))}
           </div>
         </Toolbar>
       </AppBar>

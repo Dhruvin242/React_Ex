@@ -36,6 +36,7 @@ export default function InputAdornments() {
         <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
           <InputLabel htmlFor="filled-adornment-password">Search..</InputLabel>
           <FilledInput
+            aria-label="text-field"
             onKeyPress={handleKeyboardEvent}
             id="filled-adornment-password"
             value={text}

@@ -1,11 +1,36 @@
 .main-wraper {
-  background: hsl(180deg 51% 52%);
-  padding: 45px;
+  background: #bcdee7
+    url("https://images.unsplash.com/photo-1456271390536-693558280c8f?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80&cs=tinysrgb")
+    no-repeat center center;
+  background-size: cover;
+  background-color: #bcdee7;
+  background-blend-mode: soft-light;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  width: calc(33.3% - 200px);
+  font-size: 16px;
+  background-color: rgb(146 151 179 / 13%);
+  border-radius: 14px;
+  border: 1px solid rgba(16 18 27 / 40%);
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  min-height: 210px;
+  min-width: 200px
+}
+
+.app-card:hover {
+  transform: scale(1.07);
+  background-color: var(--theme-bg-color);
 }
 
 .main-wraper .css-11lq3yg-MuiGrid-root {
   display: flex;
   justify-content: space-evenly;
+  gap: 25px;
 }
 
 .main-wraper .css-5cxbe8-MuiPaper-root-MuiCard-root {

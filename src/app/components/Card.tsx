@@ -13,14 +13,15 @@ const CardComponent: React.FC<results> = (props: results) => {
 
   const handleClick = (cardId: number, cardname: string) => {
     navigate(
-      `/profile/${cardId}-${cardname.toLowerCase().split(" ").join("-")}`
+      `/profileCard/${cardId}-${cardname.toLowerCase().split(" ").join("-")}`
     );
   };
   const { id, name, image, status } = props;
   return (
-    <Card
+    <div
+      className="app-card"
       onClick={() => handleClick(id, name)}
-      sx={{ minHeight: 210, minWidth: 200, m: 2 }}
+      aria-label="card-element"
     >
       <CardActionArea>
         <CardMedia component="img" height="140" image={image} alt={name} />
@@ -44,7 +45,7 @@ const CardComponent: React.FC<results> = (props: results) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-    </Card>
+    </div>
   );
 };
 

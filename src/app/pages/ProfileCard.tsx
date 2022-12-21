@@ -5,8 +5,9 @@ import { GET_SINGLE_CHARACTER } from "../services/charactersService/Queries";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { SetRecentlyVisited } from "../../features/Home/homeSlice";
 import LoaderComponent from "../components/Loader";
+import "../../../src/style/profilecard.css";
 
-const Profile: React.FC = () => {
+const ProfileCard: React.FC = () => {
   const { cardId } = useParams();
   const dispatch = useAppDispatch();
   const { loading, data } = useQuery(GET_SINGLE_CHARACTER, {
@@ -22,17 +23,18 @@ const Profile: React.FC = () => {
   }, [data]);
 
   return (
-    <div className="profile-page">
-      {loading && <LoaderComponent number="1" />}
-      <div className="left-side">
-        <img
-          src={data?.character?.image}
-          alt={data?.character?.name}
-          loading="lazy"
-        />
-      </div>
-      <div className="right-side">
+    <div className="profile-card">
+      <header>
+        <a>
+          <img
+            src={data?.character?.image}
+            alt={data?.character?.name}
+            loading="lazy"
+          />
+        </a>
         <h1>{data?.character?.name}</h1>
+      </header>
+      <div className="profile-bio">
         <h3>{data?.character?.species}</h3>
         <h3>{data?.character?.type}</h3>
         <h3>{data?.character?.gender}</h3>
@@ -42,4 +44,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default ProfileCard;
